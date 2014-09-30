@@ -31,7 +31,7 @@
 void mmix(uint64_t *buf, size_t len) {
 	static const uint64_t mult = 6364136223846793005U;
 	static const uint64_t inc  = 1442695040888963407U;
-	buf[0] = buf[len-1];
+	buf[0] = buf[len-1]; //reuse state
 	for (size_t i=1; i<len; ++i) {
 		buf[i] = buf[i-1] * mult + inc;
 	}
