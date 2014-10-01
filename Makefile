@@ -1,5 +1,5 @@
 CC=gcc 
-CFLAGS=-Wall --std=c11 -O3 -march=native
+CFLAGS=-Wall --std=gnu11 -O3 -march=native
 
 all: randsource
 
