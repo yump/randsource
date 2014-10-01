@@ -9,11 +9,6 @@ Usage
 
     randsource >/dev/sdX
 
-or
-
-    randsource | pv >/dev/sdX
-
-if you want to keep an eye on it.
 
 Disclaimers
 -----------
