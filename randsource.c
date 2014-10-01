@@ -81,7 +81,7 @@ void progress(size_t bytes) {
 	//rate limit
 	now = hrtime();
 	if ( now > (period_start + period) ) {
-		speed_bs = (int)(period_bytes / period);
+		speed_bs = (size_t)(period_bytes / period);
 		period_bytes = 0;
 		period_start = now;
 		//format
