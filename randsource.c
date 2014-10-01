@@ -23,7 +23,7 @@
 #include <time.h>
 
 
-#define BUFSIZE 1024
+#define BUFSIZE 32768
 
 /*
  * Linear congurential PRNG, constants specified by Donald Knuth
