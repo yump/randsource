@@ -9,6 +9,15 @@ Usage
 
     randsource >/dev/sdX
 
+Building
+--------
+
+    ./autogen && ./configure CFLAGS="-O3 -march=native" && make
+
+Installing
+----------
+
+    sudo make install    
 
 Disclaimers
 -----------
