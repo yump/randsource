@@ -7,7 +7,9 @@ grade.
 Usage
 -----
 
-    randsource >/dev/sdX
+    randsource [-p] >/dev/sdX
+
+`-p` prints progress statistics
 
 Building
 --------

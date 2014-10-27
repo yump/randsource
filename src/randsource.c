@@ -18,6 +18,7 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -98,7 +99,15 @@ void progress(size_t bytes) {
 int main(int argc, char *argv[]) {	
 	uint64_t randbuf[BUFSIZE];
 	size_t written;
-	randbuf[BUFSIZE-1] = time(NULL); //seed
+	bool print_progress;
+	// -p to print progress
+	if (argc == 2 && strcmp(argv[1], "-p") == 0) {
+		print_progress = true;
+	} else {
+		print_progress = false;
+	}
+	//seed
+	randbuf[BUFSIZE-1] = time(NULL);
 	while(true) {
 		written = 0;
 		//call progress() less often
@@ -107,7 +116,9 @@ int main(int argc, char *argv[]) {
 			written += fwrite(randbuf, sizeof (randbuf[0]),
 			                 BUFSIZE, stdout);
 		}
-		progress(written * sizeof (randbuf[0]));
+		if (print_progress) {
+			progress(written * sizeof (randbuf[0]));
+		}
 	}
 	return 0;
 }
